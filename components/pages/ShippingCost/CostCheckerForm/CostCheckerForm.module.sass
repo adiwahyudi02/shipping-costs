@@ -1,0 +1,23 @@
+.costCheckerForm
+  &__sectionTitle
+    font-size: $font-size-md
+    font-weight: bold
+
+  &__grid
+    +grid(1, $gap: $spacing-md)
+    margin-bottom: $spacing-md
+    +responsive($breakpoint-sm)
+      +grid(2, $gap: $spacing-md)
+
+  &__submitButton
+    min-width: 100%
+    +responsive($breakpoint-sm)
+      min-width: 16rem
+
+    &__wrapper
+      +flexbox(row, flex-end)
+      margin-top: $spacing-xl
+
+  &__courier
+    margin-top: $spacing-lg
+    

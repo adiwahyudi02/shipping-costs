@@ -1,0 +1,30 @@
+.checkResult
+  margin-top: $spacing-xl
+  padding-bottom: $spacing-xl
+
+  &__courier
+    &__wrapper
+      +flexbox($justify: space-between)
+
+    &__name,
+    &__services
+      font-size: $font-size-md
+      font-weight: bold
+      +responsive($breakpoint-sm)
+        font-size: $font-size-lg
+
+  &__cost
+    &__wrapper
+      border: px-to-rem(1px) solid $black-200
+      border-radius: $border-radius-lg
+      background-color: white
+      box-shadow: $box-shadow-xs
+      padding: 0 $spacing-md
+      margin-bottom: $spacing-md
+
+    &__detail
+      +flexbox($justify: space-between, $align: center)
+
+      &__name,
+      &__price
+        font-weight: bold
