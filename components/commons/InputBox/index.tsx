@@ -11,6 +11,7 @@ interface InputBoxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   error?: string;
   isRequired?: boolean;
   suffix?: string | React.ReactNode;
+  autoComplete?: HTMLInputElement["autocomplete"];
 }
 
 export const InputBox = ({
@@ -21,6 +22,7 @@ export const InputBox = ({
   isRequired = false,
   suffix,
   className,
+  autoComplete = "off",
   ...props
 }: InputBoxProps) => {
   const inputClassNames = clsx(
@@ -47,6 +49,7 @@ export const InputBox = ({
           type={type}
           disabled={disabled}
           className={inputClassNames}
+          autoComplete={autoComplete}
           {...(label && { id: label })}
           {...props}
         />
