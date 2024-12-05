@@ -1,0 +1,56 @@
+.button
+  display: inline-block
+  padding: $spacing-sm $spacing-md
+  font-size: $font-size-md
+  border: none
+  border-radius: $border-radius-md
+  cursor: pointer
+  transition: background 0.3s ease
+  text-align: center
+
+  &--primary
+    background-color: $primary
+    color: white
+    &:hover
+      background-color: darken($primary, 10%)
+
+  &--secondary
+    background-color: white
+    color: $primary
+    border: px-to-rem(1px) solid $primary
+    &:hover
+      background-color: darken($primary, 10%)
+      color: white
+
+  &--danger
+    background-color: $danger
+    color: white
+    &:hover
+      background-color: darken($danger, 10%)
+
+  &--warning
+    background-color: $warning
+    color: black
+    &:hover
+      background-color: darken($warning, 10%)
+
+  &--sm
+    font-size: $font-size-xs
+    padding: $spacing-xs $spacing-sm
+
+  &--md
+    font-size: $font-size-sm
+    padding: $spacing-sm $spacing-md
+
+  &--lg
+    font-size: $font-size-md
+    padding: $spacing-md $spacing-lg
+
+  &--xl
+    font-size: $font-size-lg
+    padding: $spacing-lg $spacing-xl
+
+  &--disabled
+    background-color: $black-300
+    cursor: not-allowed
+    pointer-events: none
