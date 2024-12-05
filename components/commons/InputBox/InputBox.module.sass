@@ -1,0 +1,37 @@
+.inputBox
+  display: block
+  margin-bottom: $spacing-sm
+
+  &__wrapper
+    display: flex
+    align-items: center
+    position: relative
+
+  &__input
+    width: 100%
+    padding: $spacing-sm
+    font-size: $font-size-sm
+    border-radius: $border-radius-sm
+    border: px-to-rem(1px) solid $black-300
+    outline: none
+    padding-right: 3rem
+
+    &:focus
+      border-color: $primary
+
+    &--error
+      border-color: $danger
+
+    &--disabled
+      background-color: $black-100
+      cursor: not-allowed
+
+  // Remove number input spinner buttons for various browsers
+  input::-webkit-inner-spin-button
+    +vendor-prefix(appearance, none)
+    margin: 0
+
+  &__suffix
+    position: absolute
+    right: 0.75rem
+    font-size: $font-size-sm
