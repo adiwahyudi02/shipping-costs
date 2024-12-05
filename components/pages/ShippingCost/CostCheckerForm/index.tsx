@@ -42,6 +42,9 @@ export const CostCheckerForm = () => {
     resolver: yupResolver(validationSchema),
   });
 
+  const originProvince = watch("originProvince");
+  const destinationProvince = watch("destinationProvince");
+
   const handleCostCheckerSuccess = (data: CheckResults) => {
     setCheckResult(data);
   };
@@ -63,14 +66,14 @@ export const CostCheckerForm = () => {
 
   const { data: origincities, isLoading: isLoadingOriginCities } =
     useGetCitiesQuery(
-      { province: watch("originProvince") },
-      { enabled: !!watch("originProvince") }
+      { province: originProvince },
+      { enabled: !!originProvince }
     );
 
   const { data: destinationcities, isLoading: isLoadingDestinationCities } =
     useGetCitiesQuery(
-      { province: watch("destinationProvince") },
-      { enabled: !!watch("destinationProvince") }
+      { province: destinationProvince },
+      { enabled: !!destinationProvince }
     );
 
   const provincesOptions = useMemo(
@@ -104,9 +107,6 @@ export const CostCheckerForm = () => {
     options: ItemDropdown[],
     value: string
   ) => options.find((option) => option.value === value);
-
-  const originProvince = watch("originProvince");
-  const destinationProvince = watch("destinationProvince");
 
   // reset city of origin if province of origin changes
   useEffect(() => {
@@ -154,6 +154,7 @@ export const CostCheckerForm = () => {
                 isRequired
                 isLoading={isLoadingOriginCities}
                 error={error?.message}
+                disabled={!originProvince}
               />
             )}
           />
@@ -195,6 +196,7 @@ export const CostCheckerForm = () => {
                 isRequired
                 isLoading={isLoadingDestinationCities}
                 error={error?.message}
+                disabled={!destinationProvince}
               />
             )}
           />
