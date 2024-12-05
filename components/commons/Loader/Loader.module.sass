@@ -1,0 +1,36 @@
+.loader
+  display: inline-block
+  animation: spin 1s linear infinite
+
+  &__svg
+    display: block
+
+  &--sm
+    width: 16px
+    height: 16px
+
+  &--md
+    width: 24px
+    height: 24px
+
+  &--lg
+    width: 28px
+    height: 32px
+
+  &--primary
+    fill: $primary
+
+  &--secondary
+    fill: $secondary
+
+  &--danger
+    fill: $danger
+
+  &--info
+    fill: $info
+
+@keyframes spin
+  0% 
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
